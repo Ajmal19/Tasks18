@@ -1,0 +1,21 @@
+command used:
+✦ To install EPEL Repository:
+   yum install https://dl.fedoraproject.org/pub/epel/epel-release-   latest-8.noarch.rpm
+   ✦ To install Remi Repository:
+   yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+   
+   dnf module install php:remi-7.4
+   dnf install php-mysqlnd
+   dnf install mysql -y
+   dnf install httpd wget -y
+   mysql -h <db_endpoint_url> -u <user_name> -p
+   show databases;use <db_name>;exit;
+   wget https://wordpress.org/latest.tar.gz
+   tar xf latest.tar.gz -C /var/www/html
+   chown -R apache:apache *
+   setenforce 0
+   chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R  
+   systemctl restart httpd
+   http://<ec2_public_ip>
+   http://<ec2_public_ip>/wordpress
+   Show tables;describe <data_stored>;
